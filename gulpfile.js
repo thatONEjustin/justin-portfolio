@@ -69,10 +69,10 @@ gulp.task('css', function () {
                .on('error', outputError);
 });
 
-gulp.task('less', function () {
+gulp.task('sass', function () {
     return gulp.src(paths.sass, base)
                .pipe(newer(dest))
-               .pipe(less())
+               .pipe(sass())
                .on('error', outputError)                    
                .pipe(gulp.dest(dest))
                .on('error', outputError)
@@ -115,7 +115,7 @@ gulp.task('watch', function () {
 
     //@TODO: Less file is a little more complex, and doesn't do 
     //       a simple glob > src > dest. 
-    gulp.watch(paths.sass, ['less']);           
+    gulp.watch(paths.sass, ['sass']);           
 
     
     watchExt.on('change', function (ev) {
@@ -150,10 +150,10 @@ gulp.task('watch', function () {
 });
 
 //Main gulp task definitions
-gulp.task('build', ['external','html', 'images', 'css', 'scripts', 'less']);
+gulp.task('build', ['external','html', 'images', 'css', 'scripts', 'sass']);
 gulp.task('dev', ['watch', 'webserver']);
 
-gulp.task('default', ['build', 'watch', 'webserver']);
+gulp.task('default', ['build', 'dev']);
 
 //Output Error catch
 function outputError (error) {
