@@ -23,23 +23,14 @@ var paths = {
     fonts:   'build/fonts/**',
     scripts: 'build/js/**.js',
     images:  ['build/img/**.{jpg,gif,svg,png}', 'build/img/**/**.{jpg,gif,svg,png}', 'build/img/**/**/**.{jpg,gif,svg,png}', '!build/img/**.db', '!build/img/**/**.db'],
-    //cfm:     'build/**.cfm', 
-    html:     'build/**.html', 
-    //less:    ['build/**.less', 'build/themes/**.less', '!build/**/helpers.less'],
-    //css:     ['build/css/**.css', '!build/css/**.less'] 
-    sass:    ['build/**.scss', 'build/themes/**.scss', '!build/**/helpers.scss'],
+    html:    ['build/**.html', 'build/pages/**.html', 'build/includes/**.html'], 
+    sass:    ['build/css/**.scss', 'build/themes/**.scss', '!build/**/_helpers.scss'],
     css:     ['build/css/**.css', '!build/css/**.scss']  
 }
 
 var base = { base: 'build' };
 var dest = 'dist';
 
-/*gulp.task('cfm', function () {
-    return gulp.src(paths.html, base)
-               .pipe(newer(dest))
-               .pipe(gulp.dest(dest))
-               .on('error', outputError);
-});*/
 
 gulp.task('html', function () {
     return gulp.src(paths.html, base)
