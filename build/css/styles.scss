@@ -1,0 +1,78 @@
+@import 'reset';
+@import 'helpers';
+
+$headerFont: 'raleway', sans-serif;
+
+html, body {
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {    
+    font-family: $headerFont;    
+}
+
+#justin-bg {
+    
+    background: url('../img/home-header.jpg') no-repeat;
+    background-size: cover;
+
+    min-height: 850px;
+
+    padding: 40px;
+
+    h1, h2 {
+        padding: 0;
+        margin: 0;
+        color: white;
+        
+    }
+
+    h1 {
+        font-size: 10rem;    
+        @include textShadow(3px, 3px, 0px, #000);
+    }
+
+    h2 {
+        font-size: 6.5rem;
+        line-height: 6rem;  
+        @include textShadow(2px, 2px, 0px, #000);
+    }
+    
+    h4 {
+        font-size: 2rem;
+        @include textShadow(2px, 2px, 0px, #000);
+    }
+
+    #tagline {
+        margin-top: 10%;
+    }
+
+    #resume {
+        margin-top: 40px;
+        a {
+            font-family: $headerFont;
+            color: #fff;
+            text-decoration: none;
+            //margin: 10px 15px;
+            width: 100%;
+            padding: 10px 35px;
+            border-radius: 0px;
+            border: 4px solid white;
+            font-size: 3rem;
+
+            @include transition;
+
+            &:hover {
+                @include scale(1.5,1.5);
+                background: white;
+                color: black;
+            }
+        }
+    }
+
+    #disclaimer {
+        h4 {
+            color: white;
+        }
+    }
+}
