@@ -1,0 +1,36 @@
+/*
+<div class="project-item">
+    <div class="row">
+        <div class="col-sm-3 photo">
+            <a href="www.google.com" target="_blank">
+                <img src="./img/projects/hmy-thumb.jpg" />
+            </a>
+        </div>
+
+        <div class="col-sm-9 details">
+            <div class="row bottom-xs">
+                <div class="col-xs info">
+                    <h4>HMY Yachts - Algolia Search Integration</h4>
+                    <p>Integrated instantsearch.js a public API from the 3rd Party Service Algolia. This uses a react.js based javascript API to connect several services to gether to serve end-users accurate and helpful search results.</p>
+                </div>
+            </div>
+
+            <div class="row bottom-xs tech-used">
+                <p>test test test</p>
+            </div>
+        </div>
+    </div>            
+</div>
+*/
+
+{
+    "projects" : {
+        "project" : {
+            "image" : "./img/projects/hmy-thumb.jpg",
+            "projectURL" : "http://www.hmy.com/",
+            "title" : "HMY Yachts - Algolia Search Integration",
+            "description" : "Integrated instantsearch.js a public API from the 3rd Party Service Algolia. This uses a react.js based javascript API to connect several services to gether to serve end-users accurate and helpful search results.",
+            "languages" : "jQuery, instantsearch.js, ColdFusion" 
+        }
+    }
+}

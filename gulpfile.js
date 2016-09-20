@@ -22,6 +22,7 @@ var paths = {
     algolia: 'build/src/**',
     fonts:   'build/fonts/**',
     scripts: 'build/js/**.js',
+    json:    'build/data/**.json',
     images:  ['build/img/**.{jpg,gif,svg,png}', 'build/img/**/**.{jpg,gif,svg,png}', 'build/img/**/**/**.{jpg,gif,svg,png}', '!build/img/**.db', '!build/img/**/**.db'],
     html:    ['build/**.html', 'build/pages/**.html', 'build/includes/**.html'], 
     sass:    ['build/css/**.scss', 'build/themes/**.scss', '!build/**/_helpers.scss'],
@@ -77,7 +78,7 @@ gulp.task('sass', function () {
 //Basically downloaded plugins / frameworks should be processed here
 //In this case I'm processing an algolia folder as well
 gulp.task('external', function () {
-    return gulp.src([paths.assets, paths.algolia, paths.fonts], base)
+    return gulp.src([paths.assets, paths.algolia, paths.fonts, paths.json, paths.json], base)
                .pipe(newer(dest))
                .pipe(gulp.dest(dest))
                .on('error', outputError);
