@@ -9,15 +9,15 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         .otherwise({ redirectTo: '/' });
 }]);
 
-app.controller('MainController', function ($scope, $route) {
+app.controller('MainController', function ($scope, $http, GetContent) {
 
     try {
 
         Typekit.load({ async: true });
 
-        /*$scope.$on('$routeChangeSuccess', function (scope, next, current) {
-
-        });*/
+        GetContent.getJson('./data/content.json').then(function (data) {
+            $scope.content = data;
+        });
 
     } catch (err) {
 
@@ -28,15 +28,24 @@ app.controller('MainController', function ($scope, $route) {
 });
 
 app.controller('HomeController', function ($scope) {
-    $scope.title = "Hi, I'm Justin*";
-    $scope.tagline = "I develop in javascript";
 
-    $scope.disclaimer = '* this is me at NYCC 2014';
+    $scope.title = $scope.content.title;
+    $scope.tagline = $scope.content.tagline;
+    $scope.disclaimer = $scope.content.disclaimer;
+    $scope.mission = $scope.content.mission;
+    $scope.statement = $scope.content.statement;
+    $scope.languages = $scope.content.languages;
+    $scope.projectTitle = $scope.content.projectTitle;
 
-    $scope.mission = "Mission Statement";
-    $scope.statement = "I’m looking for full time employment to develop and maintain javascript web applications. I’m interested in working with a close knit team with clearly defined goals to create useful solutions for end-users.";
+});
 
-    $scope.languages = 'I’m Proficient With';
-
-    $scope.projects = 'A Few Projects of Mine';
+app.service('GetContent', function ($http) {
+    return {
+        getJson : function(url) {
+            return $http.get(url).then(function (response) {
+                //console.log(response.data);
+                return response.data;
+            });
+        }
+    }
 });

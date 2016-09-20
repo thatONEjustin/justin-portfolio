@@ -1,3 +1,8 @@
+@mixin boxShadow($horz: 0, $vert: 0, $blur: 10px, $spread: 0, $rgb: rgba(0,0,0,1)) {
+    -webkit-box-shadow: $horz $vert $blur $spread $rgb;
+    box-shadow: $horz $vert $blur $spread $rgb;
+}
+
 @mixin textShadow($horz: 0, $vert: 0, $blur: 0, $shadow: #000) {
     text-shadow: $horz $vert $blur $shadow;
 }
@@ -20,7 +25,7 @@
     }
 }
 
-@mixin scale($width: 1, $height: 1) {
+@mixin Scale($width: 1, $height: 1) {
     -webkit-transform: scale($width, $height);
     -moz-transform: scale($width, $height);
     -ms-transform: scale($width, $height);
