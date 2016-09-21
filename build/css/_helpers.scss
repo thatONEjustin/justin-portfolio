@@ -1,3 +1,37 @@
+/*
+ *
+ * Media queries 
+ *
+ ****/
+$xs-width: 544px; //544px 34em
+$sm-width: 768px; //768px 48em
+$md-width: 992px; //992px 62em
+$lg-width: 1200px; //1200px 75em
+
+@mixin responsive-xs {
+    @media (max-width: #{$xs-width}) {
+        @content;
+    }
+}
+
+@mixin responsive-sm {
+    @media (min-width: #{$sm-width + 1px}) and (max-width: #{$md-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin responsive-md {
+    @media (min-width: #{$md-width + 1px}) and (max-width: #{$lg-width - 1px}) {
+        @content;
+    }
+}
+
+/*
+ *
+ * Common Functions that I use. 
+ *
+ ****/
+
 @mixin boxShadow($horz: 0, $vert: 0, $blur: 10px, $spread: 0, $rgb: rgba(0,0,0,1)) {
     -webkit-box-shadow: $horz $vert $blur $spread $rgb;
     box-shadow: $horz $vert $blur $spread $rgb;

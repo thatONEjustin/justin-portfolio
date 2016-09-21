@@ -33,6 +33,14 @@ p {
 
     padding: 40px;
 
+    @include responsive-xs {
+        min-height: 440px;
+    } 
+    
+    @include responsive-sm {
+        min-height: 440px; 
+    }
+
     h1, h2 {
         color: white;        
     }
@@ -40,12 +48,29 @@ p {
     h1 {
         font-size: $h1FontSize;    
         @include textShadow(3px, 3px, 0px, #000);
+
+        @include responsive-xs {
+            font-size: 3rem; 
+        }
+
+        @include responsive-sm {
+            font-size: 4rem;
+        }
+
+        @include responsive-md {
+            font-size: 5rem;
+        }
     }
 
     h2 {
         font-size: $h2FontSize;
         line-height: 6rem;  
         @include textShadow(2px, 2px, 0px, #000);
+
+        @include responsive-xs {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
     }
     
     h4 {
@@ -55,6 +80,10 @@ p {
 
     #tagline {
         margin-top: 10%;
+
+        @include responsive-xs {
+            margin-top: 160px;
+        }
     }
 
     #resume {
@@ -72,6 +101,12 @@ p {
 
             @include transition;
 
+            @include responsive-xs {
+                font-size: 1.5rem;
+                border: 2px solid white;
+                padding: 5px 15px;
+            }
+
             &:hover {
                 @include Scale(1.5,1.5);
                 background: white;
@@ -81,13 +116,17 @@ p {
     }
 
     #disclaimer {
-        //position: absolute;
-        //bottom: 60px;
-
         h4 {
             color: white;
+
+            @include responsive-xs {
+                font-size: 1rem;
+                position: absolute;
+                bottom: 30px;
+            }
         }
     }
+    
 }
 
 #mission-statement {
@@ -99,6 +138,18 @@ p {
 
     p {
         font-size: 2rem;
+    }
+
+    @include responsive-xs {
+        padding: 15px;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -114,10 +165,31 @@ p {
     #logos {
         margin-top: 15px;
 
-        div.col-xs {
-            img {
+        div {
+           img {
                 width: 80%;
                 height: auto;
+            }
+        }
+    }
+
+    @include responsive-xs {
+        padding: 25px;
+
+        h3 {
+            font-size: 1.75rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        #logos {
+            margin-top: 10px;
+
+            div {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
     }
@@ -130,34 +202,50 @@ p {
     }
 
     .project-item {
-        margin: 30px 0;
+        margin: 30px 0 60px 0;
 
-        .row {
-            .photo {
-                padding-right: 0;
-                margin-right: 0;
+        .photo {
+            padding-right: 0;
+            margin-right: 0;
 
-                img {
-                    width: 100%;
-                    height: auto;
-                    @include boxShadow(0px, 0px, 20px, 0, rgba(0,0,0,0.7));
-                }
+            img {
+                width: 100%;
+                height: auto;
+                @include boxShadow(0px, 0px, 20px, 0, rgba(0,0,0,0.7));
             }
 
-            .details {
-                h4 {
-                    font-size: 2rem;
-                }
+            .view-project {
 
-                .info {
-                    padding-left: 10px;
+                position: relative;
+                top: -34px;
+                
+                a {
+                    color: white;
+                    display: block;
+                    background: $liteBlue;
+                    padding: 6px 0;
+                    font-family: $headerFont;
+                    font-size: 1rem;
+                    text-decoration: none;
 
-                    p {
-                        font-size: 1.75rem;
-                    }
+                    @include boxShadow(0px 2px 20px 0, rgba(0,0,0,0.3));
                 }
             }
-        }        
+        }
+
+        .details {
+            h4 {
+                font-size: 2rem;
+            }
+
+            .info {
+                padding-left: 10px;
+
+                p {
+                    font-size: 1.75rem;
+                }
+            }
+        }   
 
         .tech-used {
             background: $liteBlue;
@@ -171,6 +259,52 @@ p {
                 padding: 7px 0;
                 margin: 0;
                 font-size: 1rem;
+            }
+        }
+    }
+
+    @include responsive-xs {
+        h3 {
+            font-size: 1.75rem;
+            text-align: center;
+        }
+
+        .project-item {
+            margin: 45px 0 30px 0;
+
+            .photo {
+                
+                box-shadow: none;
+
+                img {
+                    width: 100% !important;
+                    height: auto;
+                    box-shadow: none;
+                }                    
+            }
+                            
+            .details {
+                h4 {
+                    font-size: 1.75rem;
+                }
+                
+                .info {
+                    padding: 20px;
+
+                    p {
+                        font-size: 1.45rem;
+                    }
+                }
+            }
+                
+
+            .tech-used {
+                padding-right: 0 !important;
+
+                p {
+                    text-align: center;
+                    font-size: 0.85rem;
+                }
             }
         }
     }

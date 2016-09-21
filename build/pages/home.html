@@ -41,7 +41,7 @@
         <h3>{{languageTitle}}</h3>
 
         <div class="row" id="logos">
-            <div class="col-xs" ng-repeat="lang in languages">
+            <div class="col-xs-4 col-sm" ng-repeat="lang in languages">
                 <img src="./img/logos/skills/{{lang}}-logo.svg" />
             </div>
         </div>
@@ -55,13 +55,19 @@
 
         <div class="project-item" ng-repeat="project in projects">
             <div class="row">
-                <div class="col-sm-3 photo">
+                <div class="col-sm-12 col-md-3 photo">
                     <a href="{{project.projectUrl}}" target="_blank">
                         <img src="{{project.projectThumb}}" />
                     </a>
+                    
+                    <div class="row center-xs">
+                        <div class="col-xs view-project">
+                            <a href="{{project.projectUrl}}" target="_blank">View Project</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12 col-md-9">
                     <div class="details">
                         <div class="row bottom-xs">
                             <div class="col-xs">
