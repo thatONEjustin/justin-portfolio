@@ -7,7 +7,15 @@
     "mission" : "Mission Statement",
     "statement" : "I’m looking for full time employment to develop and maintain javascript web applications. I’m interested in working with a close knit team with clearly defined goals to create useful solutions for end-users.",
 
-    "languages" : "I’m Proficient With",
+    "languageTitle" : "I’m Proficient With",
+    "languages" : [
+        "jquery",
+        "html5",
+        "css3",
+        "coldfusion",
+        "lesscss",
+        "gulp"
+    ],
 
     "projectTitle" : "A Few Projects of Mine"
 }

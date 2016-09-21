@@ -18,6 +18,10 @@ app.controller('MainController', function ($scope, $http, GetContent) {
         GetContent.getJson('./data/content.json').then(function (data) {
             $scope.content = data;
         });
+    
+        GetContent.getJson('./data/projects.json').then(function (data) {
+            $scope.projects = data; 
+        });
 
     } catch (err) {
 
@@ -34,6 +38,7 @@ app.controller('HomeController', function ($scope) {
     $scope.disclaimer = $scope.content.disclaimer;
     $scope.mission = $scope.content.mission;
     $scope.statement = $scope.content.statement;
+    $scope.languageTitle = $scope.content.languageTitle;
     $scope.languages = $scope.content.languages;
     $scope.projectTitle = $scope.content.projectTitle;
 
