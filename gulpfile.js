@@ -103,7 +103,7 @@ gulp.task('watch', function () {
     var watchImages  = gulp.watch(paths.images, ['images']);    
     var watchCss     = gulp.watch(paths.css, ['css']);    
     var watchScripts = gulp.watch(paths.scripts, ['scripts']);
-    var watchExt     = gulp.watch([paths.assets, paths.algolia, paths.fonts], ['external']);
+    var watchExt     = gulp.watch([paths.assets, paths.algolia, paths.fonts, paths.json], ['external']);
 
     //@TODO: Less file is a little more complex, and doesn't do 
     //       a simple glob > src > dest. 
