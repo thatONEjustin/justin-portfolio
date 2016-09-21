@@ -49,7 +49,8 @@ app.controller('HomeController', function ($scope, GetContent) {
 
     GetContent.getJson('./data/projects.json').then(function (data) {
         $scope.projects = data; 
-    });
+    });/**/
+
     
 });
 

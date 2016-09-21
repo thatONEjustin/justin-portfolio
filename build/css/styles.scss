@@ -9,6 +9,9 @@ $h2FontSize: 6.5rem;
 
 $liteBlue: #3399ff;
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 
 html, body {
     font-size: 1rem;
@@ -35,10 +38,12 @@ p {
 
     @include responsive-xs {
         min-height: 440px;
+        padding: 30px;
     } 
     
     @include responsive-sm {
-        min-height: 440px; 
+        min-height: 440px;
+        padding: 30px; 
     }
 
     h1, h2 {
@@ -118,11 +123,13 @@ p {
     #disclaimer {
         h4 {
             color: white;
-
+            position: absolute;
+            bottom: 50px;
+            
             @include responsive-xs {
                 font-size: 1rem;
                 position: absolute;
-                bottom: 30px;
+                bottom: 50px;
             }
         }
     }
