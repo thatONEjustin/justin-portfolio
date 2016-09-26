@@ -26,6 +26,12 @@ $lg-width: 1200px; //1200px 75em
     }
 }
 
+@mixin responsive-lg {
+    @media (min-width: #{$lg-width}) {
+        @content;
+    }
+}
+
 /*
  *
  * Common Functions that I use. 
